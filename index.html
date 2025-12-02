@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>i,i+11 Staple 3D Viewer</title>
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<style>
+  html, body { height: 100%; margin: 0; }
+  #viewer { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+
+<div id="viewer"></div>
+
+<script>
+// Load SDF file from this GitHub repo
+let viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
+
+$3Dmol.download("ideal_i11_mC3_methyl.sdf", viewer, {}, function() {
+    viewer.setStyle({}, {stick: {radius: 0.2}});
+    viewer.zoomTo();
+    viewer.render();
+});
+</script>
+
+</body>
+</html>
